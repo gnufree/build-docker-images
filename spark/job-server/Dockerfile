@@ -1,9 +1,9 @@
 FROM kongming/spark-base:v1
 
-MAINTAINER wenjun <zhiwenjun@kongming-inc.com>
+MAINTAINER wenjun <zhiwenjun001@163.com>
 
 RUN cd /home/kmdm/spark-1.5.0 && \
-	wget http://docker.kmtongji.com/package/v2/job-server.tar.gz && \
+	wget http://myhost/package/v2/job-server.tar.gz && \
 	tar zxf job-server.tar.gz && \
 	rm job-server.tar.gz && \
 	echo job-server installed in /home/kmdm/spark-1.5.0/job-server
