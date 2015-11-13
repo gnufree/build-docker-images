@@ -1,9 +1,9 @@
 FROM       kongming/jdk:1.8
-MAINTAINER wenjun <zhiwenjun@kongming-inc.com>
+MAINTAINER wenjun <zhiwenjun001@163.com>
 
 RUN mkdir -p /home/kmdm && \
 	cd /home/kmdm && \
-	wget http://docker.kmtongji.com/package/v2/spark-1.5.0.tar.gz && \
+	wget http://myhost/package/v2/spark-1.5.0.tar.gz && \
 	tar zxf spark-1.5.0.tar.gz && \
 	rm spark-1.5.0.tar.gz && \
 	echo Spark installed in /home/kmdm
