@@ -6,7 +6,7 @@ ENV TERM xterm
 
 RUN yum install -y curl wget tar hostname && \
 	yum clean all && \
-	wget http://docker.kmtongji.com/jdk-8u60-linux-x64.tar.gz && \
+	wget http://myhost.com/jdk-8u60-linux-x64.tar.gz && \
 	tar zxf jdk-8u60-linux-x64.tar.gz && \
 	rm jdk-8u60-linux-x64.tar.gz && \
 	mv jdk1.8.0_60 /usr/local/ 
