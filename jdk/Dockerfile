@@ -1,5 +1,5 @@
 FROM       centos:centos7.1.1503
-MAINTAINER wenjun <zhiwenjun@kongming-inc.com>
+MAINTAINER wenjun <zhiwenjun001@163.com>
 
 ENV TZ "Asia/Shanghai"
 ENV TERM xterm
