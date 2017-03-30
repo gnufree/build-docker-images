@@ -1,0 +1,38 @@
+alpine-jenkins:
+    image: 'jenkins:2.32.2-alpine'
+    ports:
+        - '8090:8080'
+        - '50090:50000'
+    volumes:
+        - /home/ubuntu/workspace/jenkins_2.32.2:/var/jenkins_home
+    privileged: true
+    restart: always 
+    links:
+        - slave-java-maven
+        - slave-java-scala
+        - slave-nodejs
+        - slave-python
+slave-java-maven:
+    image: 'jenkins-slave-dind-java-maven:v1'
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /home/ubuntu/workspace/jenkins_slave_maven:/home/jenkins
+    restart: always 
+slave-java-scala:
+    image: 'jenkins-slave-dind-java-sbt:v1'
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /home/ubuntu/workspace/jenkins_slave_scala:/home/jenkins
+    restart: always 
+slave-nodejs:
+    image: 'jenkins-slave-dind-nodejs:v1'
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /home/ubuntu/workspace/jenkins_slave_nodejs:/home/jenkins
+    restart: always 
+slave-python:
+    image: 'jenkins-slave-dind-python:v1'
+    volumes:
+        - /var/run/docker.sock:/var/run/docker.sock
+        - /home/ubuntu/workspace/jenkins_slave_python:/home/jenkins
+    restart: always 

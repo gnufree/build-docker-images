@@ -10,4 +10,6 @@ ENV MAVEN_HOME /usr/share/maven
 
 COPY settings.xml ${MAVEN_HOME}/conf/settings.xml
 
+VOLUME /home/jenkins
+
 CMD ["/usr/sbin/sshd", "-D"]

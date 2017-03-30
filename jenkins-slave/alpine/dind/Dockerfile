@@ -12,6 +12,7 @@ RUN curl -fSL "https://${DOCKER_BUCKET}/builds/Linux/x86_64/docker-${DOCKER_VERS
 	&& mv docker/* /usr/local/bin/ \
 	&& rmdir docker \
 	&& rm docker.tgz \
-	&& chmod +x /usr/local/bin/docker
+	&& chmod +x /usr/local/bin/docker \
+	&& ln -s /usr/local/bin/docker /usr/bin/
 
 CMD ["sh"]
